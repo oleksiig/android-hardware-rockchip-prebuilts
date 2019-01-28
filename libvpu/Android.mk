@@ -1,0 +1,17 @@
+
+ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)),)
+
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_SUFFIX     := .so
+LOCAL_MODULE            := libvpu
+LOCAL_MODULE_CLASS      := SHARED_LIBRARIES
+LOCAL_MULTILIB          := both
+LOCAL_SRC_FILES_arm64   := $(TARGET_BOARD_PLATFORM)/lib64/libvpu.so
+LOCAL_SRC_FILES_arm     := $(TARGET_BOARD_PLATFORM)/lib/libvpu.so
+LOCAL_MODULE_PATH_32    := $(TARGET_OUT_VENDOR)/lib
+LOCAL_MODULE_PATH_64    := $(TARGET_OUT_VENDOR)/lib64
+include $(BUILD_PREBUILT)
+
+endif # $(TARGET_BOARD_PLATFORM)
