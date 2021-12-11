@@ -18,7 +18,7 @@ LOCAL_SRC_FILES_arm64   := $(TARGET_BOARD_PLATFORM_GPU)/lib64/libGLES_mali.so
 LOCAL_SRC_FILES_arm     := $(TARGET_BOARD_PLATFORM_GPU)/lib/libGLES_mali.so
 LOCAL_MODULE_PATH_32    := $(TARGET_OUT_VENDOR)/lib/egl
 LOCAL_MODULE_PATH_64    := $(TARGET_OUT_VENDOR)/lib64/egl
-LOCAL_SHARED_LIBRARIES  := libc++ libc libcutils libdl libhardware liblog libm libutils libz
+LOCAL_SHARED_LIBRARIES  := libc++ libc libcutils libdl libhardware liblog libm libutils libz libutilscallstack
 include $(BUILD_PREBUILT)
 
 endif # $(TARGET_BOARD_PLATFORM)
